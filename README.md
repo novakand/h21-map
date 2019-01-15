@@ -28,9 +28,9 @@ import { H21MapsComponent } from "/h21-map/h21-map.component";
 
 | Inputs                       |                                                                                      Описание                                                                                      |
 |-----------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| CallbackName.onclickMapPlaceId, (placeId) =>              | Событие происходит при клике по карте (по poi point google maps), метод возвращает placeId;                                                                                        |
-| CallbackName.onclickMapCoordinates, (position) =>         | Событие происходит при клике по карте, метод возвращает координаты;                                                                                                                |
-| CallbackName.detailsAddressResultPoint, (point) =>        | Метод возвращает point (IPoint), callback происходить при обращении к методу getDetailsPoint(placeId: string);                                                                     |
+| latitude             | Широта, которая определяет центр карты.                                                                                    |
+| longitude       | Долгота, которая определяет центр карты.                                                                                                               |
+| enableDraggable        |Включает / отключает, если карта перетаскивается                                                                   |
 | CallbackName.geocoderAddressResult, (point) =>            | Метод возвращает объект point (IPoint),callback происходит при обращении к методу getAddress(position: IPosition);                                                                 |
 | CallbackName.searchResult, (arrayPoint) =>                | Метод возвращает массив point (IPoint),callback происходит при обращении к методу getAddress(position: IPosition);                                                                 |
 | CallbackName.searchDetailsResult, (point) =>              | Метод возвращает объект point (IPoint),callback происходит при обращении к методу searchDetails(placeId: string);                                                                  |
