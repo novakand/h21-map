@@ -105,7 +105,7 @@ import { H21MapInfoBoxComponent } from "../";
 
 @ViewChild(H21MapInfoBoxComponent) public box: H21MapInfoBoxComponent;
 
-
+```
 ### `Входящие параметры:`
 
 | Inputs               | Описание                                                                                                                                                                                                                                                             |
