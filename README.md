@@ -137,7 +137,7 @@ import { H21MapInfoBoxComponent } from "../";
 ```javascript
 import { H21MapMarkerDirective } from "../";
 
-@ViewChild(H21MapMarkerDirective) public mar: H21MapMarkerDirective;
+@ViewChild(H21MapMarkerDirective) public marker: H21MapMarkerDirective;
 
 ```
 ### `Входящие параметры:`
@@ -188,7 +188,7 @@ import { H21MapMarkerDirective } from "../";
 ```javascript
 import { H21MapCircleDirective } from "../";
 
-@ViewChild(H21MapCircleDirective) public _circle: H21MapCircleDirective;
+@ViewChild(H21MapCircleDirective) public circle: H21MapCircleDirective;
 
 ```
 ### `Входящие параметры:`
