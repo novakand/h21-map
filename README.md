@@ -20,9 +20,9 @@
 ```
 
 ```javascript
-import { H21MapsComponent } from "/h21-map/h21-map.component";
+import { H21MapComponent } from "../";
 
-@ViewChild(H21MapsComponent) public maps: H21MapsComponent;
+@ViewChild(H21MapComponent) public map: H21MapComponent;
 
 ```
 
@@ -99,6 +99,12 @@ import { H21MapsComponent } from "/h21-map/h21-map.component";
 </h21-map-info-box>
 
 ```
+
+```javascript
+import { H21MapInfoBoxComponent } from "../";
+
+@ViewChild(H21MapInfoBoxComponent) public box: H21MapInfoBoxComponent;
+
 
 ### `Входящие параметры:`
 
