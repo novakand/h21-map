@@ -167,10 +167,8 @@ import { H21MapMarkerDirective } from "../";
 | markerClick            | Событие вызывается, когда произошел клик по маркеру. <br> Тип: Subject `MouseEvent`  |                    
 | markerDragEnd            | Событие вызывается, когда завершенно перетаскивание маркера. <br> Тип: Subject `MouseEvent`  |  
 | markerMouseOver            | Событие вызывается, когда курсор мыши наведен на маркер. <br> Тип: Subject `MouseEvent`  |          
-| markerMouseOver            | Событие вызывается, когда курсор мыши выведен с маркера. <br> Тип: Subject `MouseEvent`  |   
+| markerMouseOut            | Событие вызывается, когда курсор мыши выведен с маркера. <br> Тип: Subject `MouseEvent`  |   
 
-
-### `Директивы:`
 #### `h21-map-circle `
 
 ##### `Подключение и использование:`
