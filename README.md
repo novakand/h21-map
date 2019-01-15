@@ -40,4 +40,7 @@ import { H21MapsComponent } from "/h21-map/h21-map.component";
 | enableDoubleClickZoom       |Включает/ отключает, отслеживание события двойного клика по карте <br> Тип: boolean   <br> Значение по умолчанию: true
 | enableDefaultControl       |Включает/ отключает, по умолчанию панели управления на карте ( По умолчанию только подключен контроль масштабирования) <br> Тип: boolean   <br> Значение по умолчанию: false
 | enableScrollwheel       |Включает/ отключает, масштабирование с помощью колеса прокрутки на карте <br> Тип: boolean   <br> Значение по умолчанию: true
+| enableTrafficLayer       |Включает/ отключает, отображение слой пробок на карте <br> Тип: boolean   <br> Значение по умолчанию: false
+| enableTransitLayer       |Включает/ отключает, отображение слой транспорта на карте <br> Тип: boolean   <br> Значение по умолчанию: false
+| defaultCursor       | выбранный курсор на карте <br> Тип: CursorType   <br> Значение по умолчанию: CursorType.default
 
