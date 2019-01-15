@@ -25,8 +25,8 @@ import { H21MapsComponent } from "/h21-map/h21-map.component";
 @ViewChild(H21MapsComponent) public maps: H21MapsComponent;
 
 ```
-| Inputs
-                |                                                                                      Описание                                                                                      |
+
+| Inputs                       |                                                                                      Описание                                                                                      |
 |-----------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | CallbackName.onclickMapPlaceId, (placeId) =>              | Событие происходит при клике по карте (по poi point google maps), метод возвращает placeId;                                                                                        |
 | CallbackName.onclickMapCoordinates, (position) =>         | Событие происходит при клике по карте, метод возвращает координаты;                                                                                                                |
@@ -47,4 +47,3 @@ import { H21MapsComponent } from "/h21-map/h21-map.component";
 | CallbackName.markerDraggableEnd, (infoMarker) =>          | Метод вызывается когда маркер закончили перетаскивать (метод возвращает информацию о маркере:  -position;                                                                          |
 | CallbackName.markerDraggable, (infoMarker) =>             | Метод вызывается когда сработал метод setDraggableMarker() (метод возвращает информацию о маркере:   -разрешено/запрещено перетаскивать маркер;                                    |
 | CallbackName.infoRoute, (infoRoute) =>                    | Метод вызывается когда был построен маршрут на карте (метод возвращает информацию о маршруте (от начальной до конечной точки): о дистанции, времени в пути с учетом пробок или без |
-
