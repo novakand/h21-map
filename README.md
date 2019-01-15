@@ -1,25 +1,9 @@
-# Angular Модуль Maps (Google)
+# Angular Модуль Maps
 
-> A simple plugin.
-
-```text
-├── maps
-└── h21-maps
-└── h21-maps-component
-└── h21-maps.module
-└── abstract
-└── classes
-└── entity
-└── enum
-└── interfaces
-├── providers
- └── google
-
-```
 
 ### `Компоненты:`
 
-#### `Карта:`
+#### `h21-map:`
 
 ##### `Подключение и использование:`
 ```javascript
@@ -36,12 +20,13 @@
 ```
 
 ```javascript
-import { H21MapsComponent } from "/h21-maps/h21-maps.component";
+import { H21MapsComponent } from "/h21-map/h21-map.component";
 
 @ViewChild(H21MapsComponent) public maps: H21MapsComponent;
 
 ```
-| Название метода обратного вызова                          |                                                                                      Описание                                                                                      |
+| Inputs
+                |                                                                                      Описание                                                                                      |
 |-----------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | CallbackName.onclickMapPlaceId, (placeId) =>              | Событие происходит при клике по карте (по poi point google maps), метод возвращает placeId;                                                                                        |
 | CallbackName.onclickMapCoordinates, (position) =>         | Событие происходит при клике по карте, метод возвращает координаты;                                                                                                                |
