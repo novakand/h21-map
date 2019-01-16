@@ -337,3 +337,32 @@ import { H21MaSearchDirective } from "../";
 | Методы               | Описание                                                                                                                                                                                                                                                             |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | searcPlace(text)  |названию объекта или адрес <br> Тип:Observable `IPoint`|
+
+
+#### `h21-map-route ` `В доработке`
+
+##### `Подключение и использование:`
+```javascript
+
+<h21-map-route></h21-map-route>
+```
+
+```javascript
+import { H21MaRouteDirective } from "../";
+
+@ViewChild(H21MaRouteDirective) public route: H21MaRouteDirective;
+
+```
+
+#### `h21-map-drawing-manager ` `В доработке`
+
+##### `Подключение и использование:`
+```javascript
+
+<h21-map-drawing-manager></h21-map-drawing-manager>
+```
+
+```javascript
+import { H21MapDrawingManagerDirective } from "../";
+
+@ViewChild(H21MapDrawingManagerDirective) public route: H21MapDrawingManagerDirective;
