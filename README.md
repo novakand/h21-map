@@ -12,7 +12,7 @@
 [latitude]="27.215556209029693" 
 [longitude]="18.45703125" 
 [zoom]="3" 
-(mapReady)="mapReadu($event)" 
+(mapReady)="mapReady($event)" 
 (mapClick)="mapClick($event)"
 (mapMouseMove)="mapMouseMove($event)">
 </h21-map>
@@ -82,18 +82,18 @@ import { H21MapComponent } from "../";
 [isOpen]="isOpen">
 <div class="tooltip_content">
 <div class="tooltip_label">
-    {{label}}        
+    {{text}}        
 </div>
 <div class="tooltip-value">
-{{value}}
+{{text}}
 </div>
 </div>
 <div class="tooltip_content">
 <div class="tooltip_label">
-    {{label}}
+    {{text}}
 </div>
 <div class="tooltip-value">
-   {{value}}
+   {{text}}
 </div>
 </div>
 </h21-map-info-box>
@@ -114,7 +114,7 @@ import { H21MapInfoBoxComponent } from "../";
 | longitude       | Долгота,  для отображения информационного окна. <br> Тип: number   <br> Значение по умолчанию: 0    |
 | isOpen       | Включает/ отключает отображение информационного окна. <br> Тип: boolen   <br> Значение по умолчанию: false    |
 | zIndex       | Определяет положение элемента и нижестоящих элементов по оси z. <br> Тип: number   <br> Значение по умолчанию: 99    |
-| closeBoxURL       | Установить  url  картинки закрытия иннформационного окна. <br> Тип: string   <br> Значение по умолчанию: ' '    |
+| closeBoxURL       | Установить  url  картинки закрытия информационного окна. <br> Тип: string   <br> Значение по умолчанию: ' '    |
 
 
 ### `Директивы:`
@@ -126,8 +126,8 @@ import { H21MapInfoBoxComponent } from "../";
 <h21-marker 
 *ngFor="let m of markers; let i = index"
 (markerClick)="clickedMarker(m, i)"
-(mouseOut)="MouseOut(m)"
-(mouseOver)="MouseOver(m)" 
+(markerMouseOut)="markerMouseOut(m)"
+(markerMouseOver)="markerMouseOver(m)" 
 [latitude]="m.lat"
 [longitude]="m.lng">
 </h21-marker>
@@ -153,11 +153,11 @@ import { H21MapMarkerDirective } from "../";
 | iconUrl       | Значок (URL изображения) для переднего плана. <br> Тип: string   <br> Значение по умолчанию: ''    |
 | width       | Размер по ширине (URL изображения) для переднего плана. <br> Тип: number   <br> Значение по умолчанию: 22    |
 | height       | Размер по высоте (URL изображения) для переднего плана. <br> Тип: number   <br> Значение по умолчанию: 22   |
-| visible       | Включает/ отключает, отображение маркера на карте. <br> Тип: boolean   <br> Значение по умолчанию: true   |
+| markerVisible       | Включает/ отключает, отображение маркера на карте. <br> Тип: boolean   <br> Значение по умолчанию: true   |
 | fitBonds       | Отобразить маркер в области видимости карты. <br> Тип: boolean   <br> Значение по умолчанию: true   |
-| draggable       |  Включает/ отключает, перетаскивание маркера по карте. <br> Тип: boolean   <br> Значение по умолчанию: false   |
-| clickable       |  Включает/ отключает, клика по маркеру. <br> Тип: boolean   <br> Значение по умолчанию: true   |
-| cursor       |  Установить курсор при наведении на маркер. <br> Тип: `CursorType`   <br> Значение по умолчанию: `CursorType.default`    |
+| markerDraggable       |  Включает/ отключает, перетаскивание маркера по карте. <br> Тип: boolean   <br> Значение по умолчанию: false   |
+| markerClickable       |  Включает/ отключает, клика по маркеру. <br> Тип: boolean   <br> Значение по умолчанию: true   |
+| markerCurcor       |  Установить курсор при наведении на маркер. <br> Тип: `CursorType`   <br> Значение по умолчанию: `CursorType.default`    |
 
 
 ### `Исходящие параметры:`
@@ -178,9 +178,10 @@ import { H21MapMarkerDirective } from "../";
 [latitude]="27.2155562" 
 [longitude]="18.45703125" 
 [radius]="5000"
-[fillColor]="'red'"
+[fillColor]="'#0044d6'"
+[strokeColor]="'#0044d6'"
 [circleDraggable]="true"
-[editable]="true">
+[circleEditable]="true">
 </h21-circle>
 
 ```
@@ -198,11 +199,11 @@ import { H21MapCircleDirective } from "../";
 | latitude            | Широта положение радиуса. <br> Тип: number   <br> Значение по умолчанию: 0                                                                                                                             |
 | longitude       | Долгота,  положение радиуса. <br> Тип: number   <br> Значение по умолчанию: 0    |
 | zIndex       | Определяет положение элемента по оси z. <br> Тип: number   <br> Значение по умолчанию: 100    |
-| visible       | Включает/ отключает, отображение радиуса на карте. <br> Тип: boolean   <br> Значение по умолчанию: true   |
+| circleVisible       | Включает/ отключает, отображение радиуса на карте. <br> Тип: boolean   <br> Значение по умолчанию: true   |
 | fitBonds       | Отобразить маркер в области видимости карты. <br> Тип: boolean   <br> Значение по умолчанию: true   |
-| draggable       |  Включает/ отключает, перетаскивание радиуса по карте. <br> Тип: boolean   <br> Значение по умолчанию: false   |
+| circleDraggable       |  Включает/ отключает, перетаскивание радиуса по карте. <br> Тип: boolean   <br> Значение по умолчанию: false   |
 | clickable       |  Включает/ отключает, клика по радиусу. <br> Тип: boolean   <br> Значение по умолчанию: true   |
-| editable       |  Включает/ отключает, редактирование радиуса. <br> Тип: boolean   <br> Значение по умолчанию: false   |
+| circleEditable       |  Включает/ отключает, редактирование радиуса. <br> Тип: boolean   <br> Значение по умолчанию: false   |
 | radius       |  Радиус в метрах на поверхности Земли. <br> Тип: number   <br> Значение по умолчанию: 0   |
 | strokeColor       |  Цвет обводки. Поддерживаются все цвета CSS3, кроме расширенных именованных цветов. <br> Тип: string   <br> Значение по умолчанию: #0044d6   |
 | strokeOpacity       |  Прозрачность обводки <br> Тип: number   <br> Значение по умолчанию: 0.7   |
@@ -217,6 +218,40 @@ import { H21MapCircleDirective } from "../";
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | circleClick            | Событие вызывается, когда произошел клик по маркеру. <br> Тип: Subject `MouseEvent`  |  
 | circleDblClick            | Событие вызывается, когда произошел двойной клик по радиусу. <br> Тип: Subject `MouseEvent`  |                 
-| circleDragEnd            | Событие вызывается, когда завершенно перетаскивание радиуса. <br> Тип: Subject `MouseEvent`  |                                                                                                      
+| circleDragEnd            | Событие вызывается, когда завершенно перетаскивание радиуса. <br> Тип: Subject `MouseEvent`  |   
+| circleMouseDown            | Событие вызывается, когда нопка мыши нажата над радиусом. <br> Тип: Subject `MouseEvent`  |                              
+| circleMouseMove            | Событие вызывается, когда  радиуса. <br> Тип: Subject `MouseEvent`  |    
+| circleMouseOut            | Событие вызывается, когда курсор мыши выведен c радиуса. <br> Тип: Subject `MouseEvent`  |    
+| circleMouseOver            | Событие вызывается,  когда указатель мыши будет наведен на радиус <br> Тип: Subject `MouseEvent`  | 
+| circleMouseUp            | Событие вызывается,  когда отпущена любая из стандартных клавиш мыши радиуса. <br> Тип: Subject `MouseEvent`  |  
+| circleRadiusChange            | Событие вызывается, когда изменился радиус. <br> Тип: Subject `MouseEvent`  |  
+| circleCenterChange            | Событие вызывается, когда центр радиуса изменился. <br> Тип: Subject `MouseEvent`  |                                                                                                          
 
 ```
+#### `h21-map-cluster `
+
+##### `Подключение и использование:`
+```javascript
+
+<h21-map-cluster
+[gridSize]="300" 
+[iconUrl]="../images.png"
+[maxZoom]="10">
+</h21-map-cluster>
+```
+
+```javascript
+import { H21MapClusterDirective } from "../";
+
+@ViewChild(H21MapClusterDirective) public cluster: H21MapClusterDirective;
+```
+
+### `Входящие параметры:`
+
+| Inputs               | Описание                                                                                                                                                                                                                                                             |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| gridSize       |  Размер сетки. <br> Тип: number   <br> Значение по умолчанию: 200    |
+| maxZoom       | Определяет максимальный уровень масштабирования для кластера . <br> Тип: number   <br> Значение по умолчанию: 100    |
+| iconUrl       | Значок (URL изображения) для переднего плана. <br> Тип: string   <br> Значение по умолчанию: ''    |
+| width       | Размер по ширине (URL изображения) для переднего плана. <br> Тип: number   <br> Значение по умолчанию: 54    |
+| height       | Размер по высоте (URL изображения) для переднего плана. <br> Тип: number   <br> Значение по умолчанию: 54   |
