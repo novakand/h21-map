@@ -366,3 +366,85 @@ import { H21MaRouteDirective } from "../";
 import { H21MapDrawingManagerDirective } from "../";
 
 @ViewChild(H21MapDrawingManagerDirective) public route: H21MapDrawingManagerDirective;
+```
+
+##### `Подключение и использование:`
+
+```javascript
+<h21-map 
+#map 
+[latitude]="27.215556209029693"
+ (mapReady)="onReadyMap($event)"
+[enableClick]="true" 
+[enableToolbar]="visibleToolbar" 
+[enableResetToolbar]="resetToolbar"
+(onChangedToolbar)="onChangedToolbar($event)" 
+(mapClick)="mapClicked($event)" 
+(boundsChange)="boundsChange($event)"
+[longitude]="lon" 
+[provider]="'baidu'" 
+[zoom]="4" 
+[minZoom]="3" 
+[maxZoom]="22">
+
+<h21-map-cluster 
+[gridSize]="300"  
+#cluster>
+</h21-map-cluster>
+
+<h21-map-search 
+[query]="query" 
+(searchResponce)="responceSearch($event)" 
+#search></h21-map-search>
+
+  <h21-map-geocoding></h21-map-geocoding>
+
+<h21-map-marker 
+#marker *ngFor="let m of markers; let i = index" 
+(markerClick)="clickedMarker($event, m)"
+(markerMouseOut)="onMouseOut(box,m)" 
+(markerMouseOver)="onMouseOver(box,m)" 
+(markerDragEnd)="markerDragEnd(m, $event)" 
+[latitude]="m.lat"
+[longitude]="m.lng" 
+[label]="m.label" 
+[iconUrl]="m.iconUrl" 
+[title]="m.title" 
+[markerVisible]="m.visible" 
+[markerDraggable]='m.draggable'>
+</h21-map-marker>
+
+<h21-map-circle 
+#circle *ngFor="let c of circles; let n = index" 
+(circleClick)="clickCircle($event,c)" 
+(getRadius)="getRadius($event)"
+[latitude]="c.lat" 
+[longitude]="c.lng" 
+[radius]="c.radius" 
+[circleEditable]="c.editable">
+</h21-map-circle>
+
+<h21-map-info-box #box 
+[longitude]="boxlon" 
+[latitude]="boxlat" 
+[isOpen]="isOpen">
+<div class="tooltip_content">
+<div class="tooltip_label">
+{{text}}
+</div>
+<div class="tooltip-value">
+{{text}}
+</div>
+</div>
+<div class="tooltip_content">
+<div class="tooltip_label">
+{{text}}
+</div>
+<div class="tooltip-value">
+{{text}}
+</div>
+</div>
+</h21-map-info-box>
+
+</h21-map>
+```
